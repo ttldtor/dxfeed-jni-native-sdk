@@ -1,18 +1,18 @@
 message("--- Start DxFeed cmake for samples begin --- ")
 
 function(LINK_LIB_FROM_DIR LINK_DIR)
-  # Add DxFeedJniNativeSdk.dylib|dll|.so as SHARED dependency
+  # Add DxFeedGraalNativeSdk.dylib|dll|.so as SHARED dependency
   add_library(DX_FEED_JNI_NATIVE_SDK SHARED IMPORTED)
 
-  # Specify linkage directory where to find DxFeedJniNativeSdk.dylib|dll|.so
+  # Specify linkage directory where to find DxFeedGraalNativeSdk.dylib|dll|.so
   link_directories(${LINK_DIR})
   if (WIN32)
-    set_property(TARGET DX_FEED_JNI_NATIVE_SDK PROPERTY IMPORTED_LOCATION ${LINK_DIR}/DxFeedJniNativeSdk.dll)
-    set_property(TARGET DX_FEED_JNI_NATIVE_SDK PROPERTY IMPORTED_IMPLIB ${LINK_DIR}/DxFeedJniNativeSdk.lib)
+    set_property(TARGET DX_FEED_JNI_NATIVE_SDK PROPERTY IMPORTED_LOCATION ${LINK_DIR}/DxFeedGraalNativeSdk.dll)
+    set_property(TARGET DX_FEED_JNI_NATIVE_SDK PROPERTY IMPORTED_IMPLIB ${LINK_DIR}/DxFeedGraalNativeSdk.lib)
   elseif (APPLE)
-    set_property(TARGET DX_FEED_JNI_NATIVE_SDK PROPERTY IMPORTED_LOCATION ${LINK_DIR}/DxFeedJniNativeSdk.dylib)
+    set_property(TARGET DX_FEED_JNI_NATIVE_SDK PROPERTY IMPORTED_LOCATION ${LINK_DIR}/DxFeedGraalNativeSdk.dylib)
   elseif (UNIX)
-    set_property(TARGET DX_FEED_JNI_NATIVE_SDK PROPERTY IMPORTED_LOCATION ${LINK_DIR}/DxFeedJniNativeSdk.so)
+    set_property(TARGET DX_FEED_JNI_NATIVE_SDK PROPERTY IMPORTED_LOCATION ${LINK_DIR}/DxFeedGraalNativeSdk.so)
   endif ()
 endfunction()
 

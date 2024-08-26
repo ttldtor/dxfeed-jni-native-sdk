@@ -1,11 +1,11 @@
 # Copyright (c) 2024 Devexperts LLC.
 # SPDX-License-Identifier: MPL-2.0
 cmake_minimum_required(VERSION 3.15)
-project(DxFeedJniNativeSdk)
+project(DxFeedGraalNativeSdk)
 enable_language(CXX)
 set(CMAKE_CXX_STANDARD 17)
 
-message("--- Loading DxFeedJniNativeSdk --- ")
+message("--- Loading DxFeedGraalNativeSdk --- ")
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "valid configurations" FORCE)
 
@@ -135,4 +135,4 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
   )
 endif ()
 
-message("--- FinishedLoading DxFeedJniNativeSdk --- ")
+message("--- FinishedLoading DxFeedGraalNativeSdk --- ")
